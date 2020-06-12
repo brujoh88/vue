@@ -23,6 +23,12 @@ Vue.component('CoinDetail', {
       return this.value / this.coin.prices;
     },
   },
+  created() {
+    console.log('Created ConiDetail...');
+  },
+  mounted() {
+    console.log('Mounted ConiDetail...');
+  },
   template: `
   <div>
   <img v-bind:src="coin.img" v-bind:alt="coin.name" />
@@ -94,6 +100,13 @@ new Vue({
       },
       color: 'f4f4f4',
     };
+  },
+
+  created() {
+    console.log('Created...');
+  },
+  mounted() {
+    console.log('Mounted...');
   },
 
   methods: {
