@@ -1,4 +1,4 @@
-Vue.component('coinDetail', {
+Vue.component('CoinDetail', {
   props: ['coin'],
   data() {
     return {
@@ -9,6 +9,7 @@ Vue.component('coinDetail', {
   methods: {
     toggleShowPrices() {
       this.showPrices = !this.showPrices;
+      this.$emit('change-color', this.showPrices ? '123123' : '3d3d3d');
     },
   },
   computed: {
@@ -36,6 +37,9 @@ Vue.component('coinDetail', {
   </h1>
   <input type="number" v-model="value" />
   <span>{{convertedValue}}</span>
+
+  <slot name="text"></slot>
+  <slot name="link"> </slot>
   <ul v-show="showPrices">
         <li
           v-bind:class="{orange : p.value>coin.prices, red: p.value <= coin.prices}"
@@ -92,10 +96,9 @@ new Vue({
     };
   },
 
-  /*  methods: {
-    toggleShowPrices() {
-      this.showPrices = !this.showPrices;
-      this.color = this.color.split('').reverse().join('');
+  methods: {
+    upDateColor(color) {
+      this.color = color || this.color.split('').reverse().join('');
     },
-  }, */
+  },
 });

@@ -9,7 +9,19 @@
   </head>
   <body>
     <div id="app" v-bind:style="{background: '#'+color}">
-      <coin-detail v-bind:coin="btc"></coin-detail>
+      <coin-detail v-on:change-color="upDateColor" v-bind:coin="btc">
+        <template v-slot:text>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+            architecto fuga corrupti quae sapiente perspiciatis, repellendus a
+            nostrum culpa error dolorum similique animi nam quia ipsam rem amet
+            numquam? Suscipit.
+          </p>
+        </template>
+        <template v-slot:link>
+          <a href="">Link!</a>
+        </template>
+      </coin-detail>
       <!--       <ul>
               <li v-for="(p,i) in prices" v-bind:key="p">
                 {{i}} {{p}}
