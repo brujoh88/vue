@@ -36,9 +36,11 @@
       <!--?V-ON-->
       <button v-on:click="alertConsole">Click Me!</button>
       <!--?Componente-->
+      <componente-pelado></componente-pelado>
 
       <!-- ?Componente Comunicacion hijo-padre
         !El componente hijo no puede escribir o modificar los props que le mande el padre. -->
+      <componente2 v-bind:miprops="ObjectCorrectProps"></componente2>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js"></script>

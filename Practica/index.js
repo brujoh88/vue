@@ -1,4 +1,13 @@
-const app = new Vue({
+Vue.component('ComponentePelado', {
+  template: `<h2>Groso Soy un componente pelado</h2>`,
+});
+
+Vue.component('componente2', {
+  props: ['miprops'],
+  template: `<p >{{miprops[0].name}}</p>`,
+});
+
+new Vue({
   el: '#app',
   data() {
     return {
@@ -12,6 +21,14 @@ const app = new Vue({
         { text: '3º Tercero', name: 'Jepshi' },
         { text: '4º Cuarto', name: 'Gian' },
         { text: '5º Quinto', name: 'Reptor' },
+      ],
+      ObjectCorrectProps: [
+        {
+          name: 'Genial',
+        },
+        {
+          edad: 18,
+        },
       ],
     };
   },
