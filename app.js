@@ -1,22 +1,25 @@
-Vue.component("coinDetail", {
-  props: ["coin"],
+Vue.component('coinDetail', {
+  props: ['coin'],
   data() {
     return {
       showPrices: false,
       value: 0,
-    }
+    };
   },
   methods: {
     toggleShowPrices() {
-      this.showPrices = !this.showPrices
+      this.showPrices = !this.showPrices;
     },
   },
   computed: {
+    title() {
+      return `${this.coin.name} - ${this.coin.symbol}`;
+    },
     convertedValue() {
       if (!this.value) {
-        return 0
+        return 0;
       }
-      return this.value / this.coin.prices
+      return this.value / this.coin.prices;
     },
   },
   template: `
@@ -44,12 +47,12 @@ Vue.component("coinDetail", {
       </ul>
   </div>
   `,
-})
-Vue.component("nameComponent", {
+});
+Vue.component('nameComponent', {
   data() {
     return {
       counter: 0,
-    }
+    };
   },
   methods: {},
   template: `
@@ -61,54 +64,38 @@ Vue.component("nameComponent", {
 `,
   methods: {
     incremet() {
-      this.counter += 1
+      this.counter += 1;
     },
   },
-})
+});
 new Vue({
-  el: "#app",
+  el: '#app',
   data() {
     return {
-      name: "Bitcoin",
-      symbol: "BTC",
-      img: "https://cryptologos.cc/logos/bitcoin-btc-logo.png",
-      changePercent: 15,
-      prices: 8500,
-      value: 0,
-      /* prices: [8400, 5545, 6645, 7848, 201, 2157, 6548], */
-      color: "f4f4f4",
-      pricesWithDay: [
-        { day: "Lunes", value: "123" },
-        { day: "Martes", value: "4321" },
-        { day: "Miercoles", value: "535" },
-        { day: "Jueves", value: "15252" },
-        { day: "Viernes", value: "25252" },
-        { day: "Sabado", value: "1616" },
-        { day: "Domingo", value: "123123" },
-      ],
-      showPrices: false,
-    }
+      btc: {
+        name: 'Bitcoin',
+        symbol: 'BTC',
+        img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+        changePercent: 15,
+        prices: 8500,
+        pricesWithDay: [
+          { day: 'Lunes', value: '123' },
+          { day: 'Martes', value: '4321' },
+          { day: 'Miercoles', value: '535' },
+          { day: 'Jueves', value: '15252' },
+          { day: 'Viernes', value: '25252' },
+          { day: 'Sabado', value: '1616' },
+          { day: 'Domingo', value: '123123' },
+        ],
+      },
+      color: 'f4f4f4',
+    };
   },
-  computed: {
-    title() {
-      return `${this.name} - ${this.symbol}`
-    },
-    convertedValue() {
-      if (!this.value) {
-        return 0
-      }
-      return this.value / this.prices
-    },
-  },
-  watch: {
-    showPrices(newV, old) {
-      console.log(newV, old)
-    },
-  },
-  methods: {
+
+  /*  methods: {
     toggleShowPrices() {
-      this.showPrices = !this.showPrices
-      this.color = this.color.split("").reverse().join("")
+      this.showPrices = !this.showPrices;
+      this.color = this.color.split('').reverse().join('');
     },
-  },
-})
+  }, */
+});
