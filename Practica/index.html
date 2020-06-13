@@ -26,16 +26,19 @@
       <!--?Condicional FOR-->
       <ol>
         <li v-for="elemt in todos" v-bind:key="elemt.text">
-          {{elemt.text}}
+          {{elemt.text}} {{elemt.name}}
         </li>
       </ol>
       <h5>Otro for</h5>
       <p v-for="(value, key) in todos">
-        {{ key }} : {{ value }}
+        key: {{ key }} : value {{ value }}
       </p>
-
       <!--?V-ON-->
       <button v-on:click="alertConsole">Click Me!</button>
+      <!--?Componente-->
+
+      <!-- ?Componente Comunicacion hijo-padre
+        !El componente hijo no puede escribir o modificar los props que le mande el padre. -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js"></script>
