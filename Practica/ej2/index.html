@@ -6,8 +6,36 @@
     <title>Document</title>
   </head>
   <body>
+    <!--?Inicio del contenedor Vue-->
     <div class="" id="app">
+      <!--?Condicional IF-->
       <span v-if="seen">Now you see me</span>
+      <!--?Se linkea a un valor y lo adhiere a un atrivuto tipo title-->
+      <span v-bind:title="help">
+        ¿Fecha?
+      </span>
+      <!--?False: diplay:none -- True: diplay:inerhet-->
+      <p v-show="showOtherMessage">
+        V-SHOW ACA ESTOYS
+      </p>
+      <br />
+      <!--?Two-way data binding-->
+      <input type="text" v-model="value" />
+      <br />
+      <span> {{ value }}</span>
+      <!--?Condicional FOR-->
+      <ol>
+        <li v-for="elemt in todos" v-bind:key="elemt.text">
+          {{elemt.text}}
+        </li>
+      </ol>
+      <h5>Otro for</h5>
+      <p v-for="(value, key) in todos">
+        {{ key }} : {{ value }}
+      </p>
+
+      <!--?V-ON-->
+      <button v-on:click="alertConsole">Click Me!</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js"></script>
