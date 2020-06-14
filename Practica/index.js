@@ -4,10 +4,10 @@ Vue.component('ComponentePelado', {
 
 Vue.component('componente2', {
   props: ['miprops'],
-  template: `<p >{{miprops[0].name}}</p>`,
+  template: `<p>{{miprops.name}}</p>`,
 });
 
-new Vue({
+var app = new Vue({
   el: '#app',
   data() {
     return {
@@ -24,10 +24,12 @@ new Vue({
       ],
       ObjectCorrectProps: [
         {
+          id: 0,
           name: 'Genial',
         },
         {
-          edad: 18,
+          id: 1,
+          name: 'No tan genial',
         },
       ],
     };
