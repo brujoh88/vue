@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--?Inicio del contenedor Vue-->
+    <div class="" id="app">
+      <p v-if="product.celular.inStock">
+        {{product.celular.model}}
+      </p>
+      <p v-if="product.moto.cantidad > 10">
+        Cantidad de motos mayores a 10
+      </p>
+      <p v-else-if="product.moto.cantidad = 10">
+        10 motos en stock
+      </p>
+      <p v-else>Menos de 10 motos</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data() {
+          return {
+            value: true,
+            product: {
+              celular: {
+                inStock: true,
+                model: 'Samsung',
+              },
+              moto: {
+                cantidad: 11,
+                model: 'motomel',
+              },
+            },
+          };
+        },
+      });
+
+      /*
+       */
+    </script>
+  </body>
+</html>

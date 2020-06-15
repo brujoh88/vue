@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--?Inicio del contenedor Vue-->
+    <div class="" id="app">
+      1 isTrue: {{ isTrue ? 'Es verdadero' :'Es falso' }} <br />
+      2 isFalse: {{isFalse ? 'VERDADERO': 'FALSO'}} <br />
+      3 number: {{ number+1}} <br />
+      4 Pasar a Numero: {{ parseFloat(pasarNumber) }} <br />
+      5 Mesaje dado vuelta: {{mensaje.split('').reverse().join('')}}
+
+      <h2>Estas expreciones daran error ( falta encerrarlas con otras {} )</h2>
+      { var a = 1 } { if (ok) { return message } }
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data() {
+          return {
+            isTrue: true,
+            isFalse: false,
+            number: 0,
+            pasarNumber: '10 años',
+            mensaje: 'Gustavo',
+          };
+        },
+      });
+
+      /* 
+       Lista blanca: 'Infinity,undefined,NaN,isFinite,isNaN,' +
+    'parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,' +
+    'Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,' +
+    'require'
+      */
+    </script>
+  </body>
+</html>
