@@ -8,10 +8,12 @@
   <body>
     <!--?Inicio del contenedor Vue-->
     <div class="" id="app">
-      <input type="text" v-model="inputText" />
+      <h1>v-model linkea con una propiedad</h1>
+      <h3>Two way data binding</h3>
+      <h5>En consola $app.inputText="newText"</h5>
+      <input type="text" v-model="inputText" placeholder="Esciba un texto" />
       <textarea name="" id="" cols="30" rows="10" disabled>
-      {{inputText}}
-
+        {{inputText}}
       </textarea>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -24,10 +26,6 @@
           }
         },
       })
-
-      /*
-      v-model linkea con una propiedad
-       */
     </script>
   </body>
 </html>

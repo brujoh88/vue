@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .red {
+      color: red;
+    }
+    .green {
+      color: green;
+    }
+  </style>
+  <body>
+    <!--?Inicio del contenedor Vue-->
+    <div class="" id="app">
+      <h1>
+        v-bind me permite poner atributos dinamicos - Notar que la forma
+        resumida es :nameAtributo="namePropiety"
+      </h1>
+      <h2>1. v-bind a los atributos title y img</h2>
+      <h3 v-bind:title="ayuda">{{title}}</h3>
+      <img v-bind:src="img" alt="" /><br />
+      <h2>2. v-bind al atributo disabled del button</h2>
+      <h5>
+        app.isDisabled = true(no se ve boton) | app.isDisabled = false (se ve
+        boton)
+      </h5>
+      <button :disabled="isDisabled">Click me</button><br />
+      <h2>3. Clases en tiempo real</h2>
+      <h5>
+        app.classActive=true Activo en verde | app.classActive=false Descativo
+        en rojo
+      </h5>
+      <p :class="classActive ? 'green' : 'red'">
+        {{classActive?'Activo':'Desactivo'}}
+      </p>
+      <h2>4. Estilo en tiempo real</h2>
+      <h5>
+        app.color="ffffff" | app.newColor="green"
+      </h5>
+      <p :style="{ background: '#'+color,color:newColor}">
+        Soy un parrafo con color
+      </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data() {
+          return {
+            title: 'Soy el titulo y deseas ayuda deja el mouse arriba',
+            ayuda: 'Que desas hacer?',
+            img: 'https://api.adorable.io/avatars/face',
+            isDisabled: true,
+            classActive: true,
+            color: 'a3d2f3',
+            newColor: 'red',
+          }
+        },
+      })
+    </script>
+  </body>
+</html>

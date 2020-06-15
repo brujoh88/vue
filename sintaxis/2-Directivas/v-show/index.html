@@ -8,14 +8,18 @@
   <body>
     <!--?Inicio del contenedor Vue-->
     <div class="" id="app">
+      <h1>
+        Se encuentran los 3 elementos en el DOM < p> pero los que no cumplen con
+        la condicion tienen de propiedad display:none < p>
+      </h1>
       <p v-show="product.celular.inStock">
-        {{product.celular.model}}
+        1. {{product.celular.model}}
       </p>
       <p v-show="product.moto.cantidad > 10">
-        Cantidad de motos mayores a 10
+        2. Cantidad de motos mayores a 10
       </p>
       <p v-show="product.moto.cantidad = 10">
-        10 motos en stock
+        3. 10 motos en stock
       </p>
       <p v-show>Menos de 10 motos</p>
     </div>
@@ -39,10 +43,6 @@
           }
         },
       })
-
-      /*
-      Se encuentran los 3 elemtnsod el DOM <p> pero los que no cumplen con la condicion tienen de propiedad display:none
-       */
     </script>
   </body>
 </html>

@@ -8,6 +8,10 @@
   <body>
     <!--?Inicio del contenedor Vue-->
     <div class="" id="app">
+      <h1>
+        v-if="" busca el valor de la propiedad y determina crea el elemento en
+        el DOM en base al resultado (true|false)
+      </h1>
       <p v-if="product.celular.inStock">
         {{product.celular.model}}
       </p>
@@ -39,10 +43,6 @@
           }
         },
       })
-
-      /*
-      v-if="" busca el valor de la propiedad y determina crea el elemento en el DOM en base al resultado (true|false)
-       */
     </script>
   </body>
 </html>
