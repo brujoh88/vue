@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--?Inicio del contenedor Vue-->
+    <div class="" id="app">
+      <h3>Normally v-for</h3>
+      <ul>
+        <li v-for="element in items" v-bind:key="element.id">
+          {{element.id}}: {{element.name}}
+        </li>
+      </ul>
+      <br />
+      <h3>To access the position in the array</h3>
+      <ul>
+        <li v-for="(element, index) in items">
+          {{element}}
+        </li>
+      </ul>
+      <br />
+      <h3>To iterate through objects</h3>
+      <ul>
+        <li v-for="(value, key) in obj">
+          key: {{ key }} , value: {{value}}
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data() {
+          return {
+            items: [
+              {
+                id: 0,
+                name: 'Gustavo',
+              },
+              {
+                id: 1,
+                name: 'Hernan',
+              },
+              {
+                id: 2,
+                name: 'Tiseira',
+              },
+            ],
+            obj: { 0: 'a', 1: 'b', 2: 'c' },
+          }
+        },
+      })
+    </script>
+  </body>
+</html>
