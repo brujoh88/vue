@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--?Inicio del contenedor Vue-->
+    <div class="" id="app">
+      <h1>Methods: actions|events</h1>
+      <h5>simplificada: @</h5>
+      <button v-on:click="methods1">Aumentar (+)</button>
+      <button @click="methods2">Reset (0)</button>
+      <button @click="methodsN">Restar (-)</button>
+      <h3>Valor: {{value}}</h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data() {
+          return {
+            value: 0,
+          }
+        },
+        methods: {
+          methods1() {
+            this.value += 1
+          },
+          methods2() {
+            this.value = 0
+          },
+          methodsN() {
+            this.value -= 1
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

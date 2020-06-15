@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--?Inicio del contenedor Vue-->
+    <div class="" id="app">
+      <h1>Methods: actions|events</h1>
+      <h5>simplificada: @</h5>
+      <input v-model="message" type="text" />
+      <button v-on:click="methods1">Send Msg</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data() {
+          return {
+            message: '',
+          }
+        },
+        methods: {
+          methods1() {
+            if (this.message == '') {
+              this.message = 'Escribe aqui'
+              setTimeout(() => {
+                this.message = ''
+              }, 1500)
+              return
+            }
+            alert(this.message)
+            this.message = ''
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
