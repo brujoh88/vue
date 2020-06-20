@@ -12,6 +12,35 @@
       <h5>simplificada: @</h5>
       <input v-model="message" type="text" />
       <button v-on:click="methods1">Send Msg</button>
+      <br />
+      <h3>
+        Modifiers: .tab .dalete .esc .space .up .down .left .rigth .ctrl .alt
+        .shift .meta
+      </h3>
+      <h3>
+        Key modifiers: .enter
+      </h3>
+      <br />
+      <input
+        type="text"
+        @keyup.enter="submit"
+        placeholder="Press Enter and view console"
+        v-model="messageTwo"
+      />
+      <br />
+      <h3>Other Example</h3>
+
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        @keyup.ctrl.c="onCopy"
+        @keyup.up="up"
+        @keyup.left="leftMouse"
+        v-model="messageTextarea"
+        placeholder="Ctrl+C - up"
+      ></textarea>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -20,6 +49,8 @@
         data() {
           return {
             message: '',
+            messageTwo: '',
+            messageTextarea: '',
           }
         },
         methods: {
@@ -33,6 +64,19 @@
             }
             alert(this.message)
             this.message = ''
+          },
+          submit() {
+            console.log(this.messageTwo)
+            this.messageTwo = ''
+          },
+          onCopy() {
+            this.messageTextarea = 'Ctrl + C'
+          },
+          up() {
+            this.messageTextarea = 'Flecha arriba'
+          },
+          leftMouse() {
+            this.messageTextarea = ' Izquierda Mouse'
           },
         },
       })
